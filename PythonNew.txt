@@ -1,0 +1,405 @@
+Python Session 1
+=======================================================================
+
+# Script to print statements
+print("Hello Python")
+print('How r u')
+print("Let's go for lunch")
+print('He said,"I am busy today"')
+print('He said,"Let\'s go for lunch"')
+print("He said,\"Let's go for lunch\"")
+
+======================================================================
+Single line comments start with #
+
+Multiple line comments can start with '''  and end with '''
+(or) start """ and end with """
+
+=========================================================================
+#Adddition and Concatination
+print(2+5)
+print("Hello"+"Python")
+print("Hi"+"5")
+print("hi"+str(5))
+print("8"+"5")
+print("8"+str(5))
+print(int("8")+5)
+print("Hello","Python")
+print("Hi",5)
+
+=======================================================================
+
+#if conditions
+#Program to find the smallest of 3 numbers
+a = 10
+b = 20
+c= 5
+if a < b and a < c:
+    print("a is the smallest ")
+elif b < c:
+    print("b is the smallest")
+else:
+    print("c is the smallest")
+print("Program finished")
+
+========================================================================
+Loops
+=================
+#Program to display the even numbers between 1-10
+i = 2
+while i <= 10:
+    print(i)
+    i = i + 2
+
+==========================================================================
+#Program to display the 2 tables
+i = 1
+while i <= 10:
+    print(2,"*",i,"=",2*i)
+    i = i + 1
+
+=================================================================
+Python Session 2
+================================================================
+For Loops
+----------------
+a=[1,4,6,9,10]
+for i in a:
+    print(i)
+
+tools=["Docker","Jenkins","Git","Ansible"]
+for x in tools:
+    print(x)
+
+===============================================================
+#To display the sum of numbers in a list
+numbers=[10,50,90,40,60]
+sum = 0
+for i in numbers:
+    sum = sum + i
+    
+print("The total sum of numbers is: ",sum)
+
+===================================================================
+#To find the max number in a list
+numbers=[10,50,90,40,60]
+max = 0
+for i in numbers:
+    if max < i:
+        max = i
+
+print("The maximum number in the list is :",max)
+
+==================================================================
+#Program to find the number of even and odd
+numbers=[1,2,3,4,5,6,7,8,9,10,11]
+even = 0
+odd = 0
+for i in numbers:
+    if i % 2 == 0:
+        even = even + 1
+        print("Even :",i)
+    else:
+        odd = odd + 1
+        print("Odd :"i)
+
+print("The even number count is :",even)
+print("The odd number count is :",odd)
+
+========================================================================
+Read Write operations on Files
+=======================================
+#To create a new file and write into it
+text ="\nThis is a python session"
+file=open("C:/Users/gandh/OneDrive/Desktop/file1.txt","w")
+file.write(text)
+
+#To append we can open in append mode using 'a'
+text ="\nThis is a python session"
+file=open("C:/Users/gandh/OneDrive/Desktop/file1.txt","a")
+file.write(text)
+
+#To read all the content of a file
+file=open("C:/Users/gandh/OneDrive/Desktop/file1.txt","r")
+text = file.read()
+print(text)
+
+#To read the content line by line
+file=open("C:/Users/gandh/OneDrive/Desktop/file1.txt","r")
+text = file.readlines()
+for x in text:
+    print(x)
+
+
+#To copy all the content of a file into another file
+file1=open("C:/Users/gandh/OneDrive/Desktop/file1.txt","r")
+file2=open("C:/Users/gandh/OneDrive/Desktop/file2.txt","w")
+text = file1.read()
+file2.write(text)
+
+
+#To copy alternate lines of code from one file to another
+file1=open("C:/Users/gandh/OneDrive/Desktop/file1.txt","r")
+file3=open("C:/Users/gandh/OneDrive/Desktop/file3.txt","a")
+text=file1.readlines()
+i = 0
+while i < len(text):
+    file3.write(text[i])
+    i = i + 2
+
+
+==========================================================
+Functions
+----------------
+They are used for code resubality
+
+def sum(a,b):
+    print(a+b)
+def sub(a,b):
+    print(a-b)
+def mul(a,b):
+    print(a*b)
+def div(a,b):
+    print(a/b)
+
+sum(10,20)
+mul(4,5)
+
+===============================================================
+Python Session 3
+================================================================
+#Create a predefined function to copy the content of a file into another 
+
+def copy_file(srcfile,destfile):
+    file1=open(srcfile,'r')
+    file2=open(destfile,'w')
+    text=file1.read()
+    file2.write(text)
+
+copy_file("C:/Users/gandh/OneDrive/Desktop/Ansible_8pm.txt","C:/Users/gandh/OneDrive/Desktop/newAnsible.txt")
+
+
+copy_file("C:/Users/gandh/OneDrive/Desktop/Jenkins12.txt","C:/Users/gandh/OneDrive/Desktop/Jenkins100.txt")
+
+
+==================================================================================
+Classes and Objects
+============================
+Classes are logical entites which contianer certain function.
+The functions present in a class can be accessed only after an obhect is
+created
+
+class calculator:
+    def add(self,a,b):
+        print(a+b)
+    def sub(self,a,b):
+        print(a-b)
+    def mul(self,a,b):
+        print(a*b)
+    def div(self,a,b):
+        print(a/b)
+    def exp(self,a,b):
+        print(a**b)
+
+
+c = calculator()
+c.mul(10,10)
+c.exp(2,4)
+a = calculator()
+a.add(10,5)
+
+======================================================================
+Modules in Python
+=========================
+import math
+import calander
+a=math.sqrt(16)
+print(a)
+a=math.factorial(4)
+print(a)
+print(calander.month(2020,10))
+print(calander.isleap(2020)
+
+===========================================================================
+
+
+#Creating Modules
+=========================
+Create a new pythin file "functions.py"
+def area(length,breadth):
+    area = length*breadth
+    print("Area is : ",area)
+def perimeter(length,breadth):
+    print("Perimeter is : ",2*(length+breadth))
+
+class myclass:
+    def add(self,a,b):
+        print(a+b)
+
+#Create another python file and import the above "functions" module in it
+import functions
+
+functions.area(5,2)
+functions.perimeter(5,2)
+
+a=functions.myclass()
+a.add(10,20)
+
+=========================================================================
+Python Docker Automation
+=================================
+1 Create an AWS ubuntu instance
+2 Install docker on it
+
+=================================================================
+#Python script to download docker images
+
+import subprocess
+image = input("Enter the image to be downloaded: ")
+
+subprocess.call("docker pull %s"%image,shell=True)
+
+==================================================================
+
+#Pyhton script to create multiple containers from any docker image
+
+import subprocess
+image = input("Enter the docker image which has to be created as container: ")
+count = input("Enter the number of containers that are to be created: ")
+n = int(count)
+i = 1
+while  i <= n:
+    subprocess.call("docker run --name container%d -d -P %s"%(i,image),shell=True)
+    i = i + 1
+
+
+==========================================================================
+Python Session 4
+========================================================================
+import subprocess
+
+
+
+subprocess.call('docker container ls | grep httpd-foreground | cut -d " " -f 1 > file1',shell=True)
+
+contids=open('file1','r').readlines()
+
+i = 0
+while i < len(contids):
+    id=contids[i]
+    subprocess.call("docker rm -f %s"%id,shell=True)
+    i = i + 2
+
+
+
+import subprocess
+
+
+i = 1
+
+while i <= 5:
+    subprocess.call("docker network create --driver bridge intelliq%d"%i,shell=True)
+    subprocess.call("docker run --name h%d -P -d  --network intelliq%i httpd"%(i,i),shell=True)
+    i = i + 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

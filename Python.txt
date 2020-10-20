@@ -1,0 +1,115 @@
+Arthimatic Operators
+======================
++
+-
+*
+/
+%   Modulus(reminder)
+**  Exponent (powersoff)
+
+=============================
+Relational Operators
+<   Less than
+>   Greater than
+<= Less than or equal to 
+>= Greater than or equal to
+== Equal to
+!- Not equal to 
+
+Note:   = is called as assignment
+
+=========================================
+
+Swapping 2 numbers using a 3rd variable
+a = 10
+b = 20
+c = a
+a = b
+b = c
+print(a)
+print(b)
+============================================
+Swapping 2 numbers without using a 3rd variable
+
+a = 10
+b = 20
+a = a + b
+b = a - b
+a = a - b
+print(a)
+print(b)
+
+============================================
+Logical Operators
+and    Conjuction
+or     disjuction
+not    negation
+
+===========================================
+Conditional Statements
+#Program to find the smallest of 3 numbers
+a = 10
+b = 20
+c = 5
+if a < b and a < c:
+    print("a is the smallest")
+elif b < c:
+    print("b is the smallest")
+else:
+    print("c is the smallest")
+
+========================================
+i = 1
+while i <= 10:
+    print("Python")
+    i = i + 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
